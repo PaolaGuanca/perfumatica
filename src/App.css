@@ -17,4 +17,28 @@
   color: #61dafb;
 }
 
+.cart-widget {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+
+.qty-display {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  position: absolute;
+  text-align: center;
+  line-height: 17px;
+}
+
+.list-container {
+  margin: 10px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
 
