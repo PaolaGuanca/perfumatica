@@ -51,5 +51,33 @@ span{
   margin: 0px 20px;
 }
 
+.stock-container {
+  margin: 20px auto;
+}
 
+.perf {
+  margin: 50px 70px;
+}
 
+.perf img {
+   width: 350px;
+   margin: 10px auto;
+}
+
+.perf p {
+  margin: 0px auto;
+  font-size: larger;
+}
+
+.perf h1, h3 {
+  margin: 10px auto;
+}
+
+.mat-card {
+  border-radius: 32px;
+  margin: 25px auto;
+  padding: 20px;
+  border-color: lightgray;
+  width: 70%;
+  box-sizing: border-box;
+}
