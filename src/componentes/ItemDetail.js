@@ -2,22 +2,31 @@ import ItemCount from './ItemCount';
 import React from 'react';
 import '../App.css';
 
-const ItemDetail = ({ info }) => {
+const ItemDetail = ({ item }) => {
 
     const onAdd = (quantity) => {
         alert("Agregados " + quantity + " perfumes al carrito");
       }
       
       return (
-        <div className="perf card mat-card">
-        <img src={info.img} alt={info.marca} />
-        <h1>{info.marca}</h1>
-        <p>{info.tamaño}</p>       
-        <h3>{info.precio}</h3>
-        <p>{info.descripcion}</p>
-        <ItemCount stock={info.stock} initial={1} onAdd={onAdd} />
-        <p>Stock: {info.stock}</p>
+        <>
+        {
+         item && item.img
+            ? 
+        <div className="perf card mat-card">      
+        <div class="imgCont">
+        <img src={item.img} alt={item.marca} />
+        </div>     
+        <h1>{item.marca}</h1>
+        <p>{item.tamaño}</p>       
+        <h3>{item.precio}</h3><br/>
+        <p>{item.descripcion}</p><br/>
+        <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+        <p>Stock: {item.stock}</p>
         </div>
+        : <p>Cargando...</p>        
+        }
+        </>
 );	
 }
 
