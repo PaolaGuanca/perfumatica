@@ -17,10 +17,37 @@
   color: #61dafb;
 }
 
+a {
+  text-decoration: none;
+}
+
+.navLinkColor {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  margin-right: 50px;
+}
+
+.navLinkColorDW {
+  text-decoration: none;
+  color: gray;
+  font-size: 15px;
+}
+
+.navLinkColorD {
+  color: coral;
+  font-size: 25px;
+  margin: 0px 400px;
+}
+
 .cart-widget {
   position: relative;
   cursor: pointer;
   text-align: center;
+}
+
+.carW {
+  margin-left: 220%;
 }
 
 .qty-display {

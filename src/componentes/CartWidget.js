@@ -4,10 +4,9 @@ import '../App.css';
 
 function CartWidget () {
     return (
-      <div className="cart-widget">
-        
+      <div className="cart-widget">        
         <FontAwesomeIcon icon={faCartShopping} size="1x" color="grey" />
-        <div className="qty-display">0</div>
+        <div className="qty-display">3</div>
       </div>
     );
   };

@@ -1,13 +1,14 @@
-import React from 'react';
-import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
-const Item = ({ info }) => {
+const Item = ({ id, pictureUrl, title }) => {
     return (
         <div class="perf card mat-card">
           <div class="imgCont">
-        </div>
-        <h1>{info.marca}</h1>                
+            <img src={pictureUrl} alt={title}/>             
+          </div>
+          <h1>{title}</h1> 
+          <Link to={`/item/${id}`}><span className="navLinkColorD">Detalles</span></Link>                 
         </div>
 );	
 }

@@ -1,9 +1,14 @@
-import ItemDetail from './ItemDetail';
-import React from 'react';
+import Item from "./Item";
 
-const ItemList = ({ data = [] }) => {
+const ItemList = ({ items }) => {
     return (
-        data.map(perfumes => <ItemDetail key={perfumes.id} info={perfumes} />)
+        <div>
+        {
+        items.length > 0
+            ? items.map(item => <Item key={item.id} id={item.id} title={item.marca} size={item.tamaño} price={item.precio} pictureUrl={item.img} description={item.descripcion} stock={item.stock} />)
+            : <p>Cargando...</p>
+        }
+        </div>
         );
 }
 
