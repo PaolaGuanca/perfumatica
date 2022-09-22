@@ -1,4 +1,3 @@
-import ItemCount from './ItemCount';
 import ItemList from './ItemList';
 import customFetch from "../Datos/customFetch";
 import { useParams } from 'react-router';
@@ -19,10 +18,6 @@ const ItemListContainer = () => {
       .catch(err => console.log(err))
 }, [idCategory]);
 
-const onAdd = (qty) => {
-  alert("You have selected " + qty + " items.");
-}
- 
 return (
     <div className="list-container">           
         <ItemList items={datos} />   

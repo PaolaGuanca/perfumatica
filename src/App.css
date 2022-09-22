@@ -108,3 +108,16 @@ span{
   width: 70%;
   box-sizing: border-box;
 }
+
+ul {
+  list-style-type: none;
+}
+
+ul img {
+  width: 250px;
+  margin-left: -20px;
+}
+
+li {
+  margin: 10px 0px;
+}
