@@ -1,7 +1,18 @@
+import { useContext } from "react"
+import { CartContext } from "./CartContext";
+
 const Cart = () => {
+    const contx = useContext(CartContext);
+
     return (
         <>
-        <hr></hr>
+        <button onClick={contx.clear}>Borrar Todo </button>
+        {
+            contx.cartList.map(item =>
+               <li>{item.marca} 
+               <button onClick={() => contx.removeItem(item.id)}>Borrar Producto</button>
+               </li>)
+        }        
         </>
     );
 }
