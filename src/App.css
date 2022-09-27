@@ -121,3 +121,19 @@ ul img {
 li {
   margin: 10px 0px;
 }
+
+.gridsCart {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+#carrito0 {
+  grid-column: 2/ span 1;
+  grid-row: 1/ span 1;
+}
+
+#carrito1 {
+  grid-column: 1/ span 1;
+  grid-row: 1/ span 1;
+}
