@@ -1,22 +1,24 @@
 import ItemList from './ItemList';
-import customFetch from "../Datos/customFetch";
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
+import { firestoreFetch } from '../Datos/firestoreFetch';
 import '../App.css';
-const { perfumes } = require('../Datos/perfumes');
 
 const ItemListContainer = () => {
   const [datos, setDatos] = useState([]);
   const { idCategory } = useParams();
 
-  useEffect(() =>  {
-    customFetch(2000, perfumes.filter(item => {
-      if (idCategory === undefined) return item;
-      return item.categoryId === parseInt(idCategory)
-  }))
-      .then(result => setDatos(result))
-      .catch(err => console.log(err))
+  useEffect(() => {
+    firestoreFetch(idCategory)
+        .then(result => setDatos(result))
+        .catch(err => console.log(err));
 }, [idCategory]);
+
+useEffect(() => {
+  return (() => {
+      setDatos([]);
+  })
+}, []);
 
 return (
     <div className="list-container">           
