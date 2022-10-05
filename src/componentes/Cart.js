@@ -27,7 +27,7 @@ const Cart = () => {
           email: "pepe@gmail.com",
           phone: "555348963"
         },
-        total: contx.calcTotal(),
+        total: contx.precioTotal(),
         items: itemsForDB,
         date: serverTimestamp()
       };
