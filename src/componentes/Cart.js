@@ -8,16 +8,16 @@ const Cart = () => {
     const contx = useContext(CartContext);
 
     const createOrder = () => {
-      const itemsForDB = test.cartList.map(item => ({
-        id: item.idItem,
-        title: item.nameItem,
-        price: item.costItem
+      const itemsForDB = contx.cartList.map(item => ({
+        id: item.id,
+        title: item.marca,
+        price: item.precio
       }));
   
-      test.cartList.forEach(async (item) => {
-        const itemRef = doc(db, "products", item.idItem);
+      contx.cartList.forEach(async (item) => {
+        const itemRef = doc(db, "perfumes", item.id);
         await updateDoc(itemRef, {
-          stock: increment(-item.qtyItem)
+          stock: increment(-item.quantity)
         });
       });
   
@@ -27,7 +27,7 @@ const Cart = () => {
           email: "pepe@gmail.com",
           phone: "555348963"
         },
-        total: test.calcTotal(),
+        total: contx.calcTotal(),
         items: itemsForDB,
         date: serverTimestamp()
       };
@@ -42,10 +42,10 @@ const Cart = () => {
       }
     
       createOrderInFirestore()
-        .then(result => alert('Your order has been created. Please take note of the ID of your order.\n\n\nOrder ID: ' + result.id + '\n\n'))
+        .then(result => alert('Tu orden ha sido creada con éxito con el siguiente número de ID:\n\n\nOrder ID: ' + result.id + '\n\n'))
         .catch(err => console.log(err));
     
-      test.removeList();
+      contx.clear();
     
     }
 

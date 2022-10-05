@@ -1,4 +1,4 @@
-import { query, orderBy, where, collection, getDocs } from '@firebase/firestore';
+import { query, where, collection, getDocs } from '@firebase/firestore';
 import { doc, getDoc } from "firebase/firestore";
 import db from './firebaseConfig';
 
@@ -7,7 +7,7 @@ export const firestoreFetch = async (idCategory) => {
     if (idCategory) {
         q = query(collection(db, "perfumes"), where('categoryId', '==', idCategory));
     } else {
-        q = query(collection(db, "perfumes"), orderBy('name'));
+        q = query(collection(db, "perfumes"));
     }
     const querySnapshot = await getDocs(q);
     const dataFromFirestore = querySnapshot.docs.map(document => ({
