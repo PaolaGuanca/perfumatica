@@ -35,7 +35,6 @@ const Cart = () => {
       console.log(order);
       
       const createOrderInFirestore = async () => {
-        // Add a new document with a generated id
         const newOrderRef = doc(collection(db, "orders"));
         await setDoc(newOrderRef, order);
         return newOrderRef;

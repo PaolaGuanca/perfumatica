@@ -3,8 +3,8 @@ import '../App.css';
 
 const Item = ({ id, pictureUrl, title }) => {
     return (
-        <div class="perf card mat-card">
-          <div class="imgCont">
+        <div className="perf card mat-card">
+          <div className="imgCont">
             <img src={pictureUrl} alt={title}/>             
           </div>
           <h1>{title}</h1> 

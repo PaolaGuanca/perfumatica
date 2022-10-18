@@ -1,6 +1,6 @@
 import ItemList from './ItemList';
-import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { firestoreFetch } from '../Datos/firestoreFetch';
 import '../App.css';
 
